@@ -4,7 +4,7 @@
     <li *ngFor="let book of books" 
       [class.selected]="book === selectedBook" 
       (click)="onSelect(book)">
-      <span class="badge">{{book.id}}</span> {{book.title}} : {{book.author}}
+      <span class="badge">{{book.id}}</span> {{book.title}} By: {{book.author}}
     </li>
   </ul>
 </div>
