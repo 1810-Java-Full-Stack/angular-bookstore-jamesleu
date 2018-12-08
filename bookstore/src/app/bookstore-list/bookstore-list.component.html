@@ -1,26 +1,20 @@
 <h2>Check out these books</h2>
 <div class="grid grid-pad">
   <ul class="books">
-    <li *ngFor="let book of books" 
+    <li *ngFor="let book of this.bookArr" 
       [class.selected]="book === selectedBook" 
       (click)="onSelect(book)">
-      <span class="badge">{{book.id}}</span> {{book.title}} By: {{book.author}}
+      <span class="badge">{{book.id}}</span> {{book.title}}
     </li>
   </ul>
 </div>
 
 <div *ngIf="selectedBook">
   <h2>{{selectedBook.title}} : Details</h2>
-  <h2>{{selectedBook.author}} : Details</h2>
   <div><span>id: </span>{{selectedBook.id}}</div>
   <div>
     <label>Title:
       <input [(ngModel)]="selectedBook.title" placeholder="Title">
-    </label>
-  </div>
-  <div>
-    <label> Author:
-        <input [(ngModel)]="selectedBook.author" placeholder="Author">
     </label>
   </div>
 </div>

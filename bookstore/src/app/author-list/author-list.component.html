@@ -1,0 +1,25 @@
+<h2>Check out these books</h2>
+<div class="grid grid-pad">
+  <ul class="books">
+    <li *ngFor="let author of this.authorArr" 
+      [class.selected]="author === selectedAuthor" 
+      (click)="onSelect(author)">
+      <span class="badge">{{author.firstname}}</span> {{author.lastname}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedAuthor">
+  <h2>{{selectedAuthor.firstname}} : Details</h2>
+  <h2>{{selectedAuthor.lastname}} : Details</h2>
+  <div>
+    <label>Firstname:
+      <input [(ngModel)]="selectedAuthor.firstname" placeholder="First Name">
+    </label>
+  </div>
+  <div>
+    <label> Lastname:
+        <input [(ngModel)]="selectedAuthor.lastname" placeholder="Last Name">
+    </label>
+  </div>
+</div>
